@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>برو | التسويق الرقمي الاحترافي</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.9)), 
+                  url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920') center/cover fixed;
+    }
+    .service-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.2); }
+  </style>
+</head>
+<body class="bg-slate-50">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div onclick="navigateTo('home')" class="text-3xl font-bold text-blue-600 cursor-pointer">برو</div>
+      <div class="flex gap-8 text-lg font-medium">
+        <a href="#" onclick="navigateTo('home')">الرئيسية</a>
+        <a href="#" onclick="navigateTo('services')">خدماتنا</a>
+        <a href="#" onclick="navigateTo('about')">من نحن</a>
+        <a href="#" onclick="navigateTo('contact')">اتصل بنا</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg text-white py-40 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">نصنع حضورك الرقمي الذي يبيع 24/7</h1>
+      <p class="text-2xl mb-10">إدارة إعلانات • تصميم مواقع • تسويق محتوى</p>
+      <button onclick="navigateTo('services')" class="bg-yellow-400 text-slate-900 font-bold text-xl px-12 py-6 rounded-2xl">ابدأ مشروعك الآن</button>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 hidden bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">خدماتنا الرئيسية</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div onclick="showService(1)" class="service-card cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800" class="w-full h-64 object-cover">
+          <div class="p-8"><h3 class="text-2xl font-bold">إدارة الإعلانات</h3></div>
+        </div>
+        <div onclick="showService(2)" class="service-card cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" class="w-full h-64 object-cover">
+          <div class="p-8"><h3 class="text-2xl font-bold">تصميم المواقع</h3></div>
+        </div>
+        <div onclick="showService(3)" class="service-card cursor-pointer bg-white rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800" class="w-full h-64 object-cover">
+          <div class="p-8"><h3 class="text-2xl font-bold">تسويق المحتوى</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Detail -->
+  <section id="service-detail" class="py-20 bg-slate-100 hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <button onclick="navigateTo('services')" class="mb-8 text-blue-600 font-medium">← العودة</button>
+      <div id="detail-content" class="bg-white rounded-3xl shadow-2xl p-10"></div>
+    </div>
+  </section>
+
+  <!-- من نحن -->
+  <section id="about" class="py-24 hidden bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">من نحن</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" class="rounded-3xl shadow-2xl" alt="فريق برو">
+        </div>
+        <div class="space-y-6 text-lg text-slate-600">
+          <p>نحن <strong>برو</strong>، وكالة تسويق رقمي متخصصة بخبرة تزيد عن 7 سنوات.</p>
+          <p>نساعد الشركات والمشاريع الصغيرة والمتوسطة على النمو السريع من خلال استراتيجيات تسويقية مدروسة ونتائج قابلة للقياس.</p>
+          <p>مهمتنا: تحويل وجودك الرقمي من مجرد صفحة إلى <strong>مصدر دخل مستمر</strong>.</p>
+          <div class="pt-6">
+            <p class="font-bold text-xl">رؤيتنا:</p>
+            <p>أن نصبح الشريك التسويقي الأول لكل مشروع طموح في مصر والوطن العربي.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- اتصل بنا -->
+  <section id="contact" class="py-24 hidden bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">اتصل بنا</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold mb-8">معلومات التواصل</h3>
+          <div class="space-y-6 text-lg">
+            <p class="flex items-center gap-4"><i class="fa-solid fa-phone text-blue-400"></i> <strong>0100 123 4567</strong></p>
+            <p class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-green-500"></i> <strong>0100 123 4567</strong></p>
+            <p class="flex items-center gap-4"><i class="fa-solid fa-envelope"></i> info@pro.marketing</p>
+            <p class="flex items-center gap-4"><i class="fa-solid fa-location-dot"></i> القاهرة، مصر</p>
+          </div>
+        </div>
+        <form class="space-y-6">
+          <input type="text" placeholder="الاسم الكامل" class="w-full p-6 rounded-2xl bg-white/10 border border-white/30 focus:border-blue-400 outline-none">
+          <input type="tel" placeholder="رقم الواتساب" class="w-full p-6 rounded-2xl bg-white/10 border border-white/30 focus:border-blue-400 outline-none">
+          <textarea placeholder="وصف مشروعك أو استفسارك..." rows="6" class="w-full p-6 rounded-2xl bg-white/10 border border-white/30 focus:border-blue-400 outline-none"></textarea>
+          <button type="submit" class="w-full bg-yellow-400 text-slate-900 py-7 rounded-2xl font-bold text-xl">إرسال الرسالة</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- زر واتساب عائم -->
+  <a href="https://wa.me/201001234567" target="_blank" 
+     class="fixed bottom-6 left-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition text-4xl z-50">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer class="bg-slate-950 text-slate-400 py-12 text-center">
+    <p>© 2026 برو للتسويق الرقمي - جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function navigateTo(section) {
+      document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(section).classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function showService(id) {
+      const content = document.getElementById('detail-content');
+      let html = '';
+
+      if (id === 1) {
+        html = `<img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200" class="w-full h-96 object-cover rounded-2xl mb-8">
+                <h1 class="text-4xl font-bold mb-6">إدارة الإعلانات المدفوعة</h1>
+                <p class="text-xl text-slate-600">نصمم وندير حملات إعلانية احترافية على فيسبوك، إنستجرام، جوجل وتيك توك بأعلى عائد استثماري.</p>`;
+      } else if (id === 2) {
+        html = `<img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200" class="w-full h-96 object-cover rounded-2xl mb-8">
+                <h1 class="text-4xl font-bold mb-6">تصميم المواقع الاحترافية</h1>
+                <p class="text-xl text-slate-600">نصمم لك موقع متكامل يليق بمستوى مشروعك ويحول الزوار إلى عملاء.</p>`;
+      } else if (id === 3) {
+        html = `<img src="https://images.unsplash.com/photo-1611162618071-6c9c2b6e5e6d?w=1200" class="w-full h-96 object-cover rounded-2xl mb-8">
+                <h1 class="text-4xl font-bold mb-6">تسويق المحتوى</h1>
+                <p class="text-xl text-slate-600">إنتاج محتوى إبداعي (ريلز، فيديوهات، صور) يجذب الجمهور المستهدف ويزيد مبيعاتك.</p>`;
+      }
+
+      content.innerHTML = html;
+      navigateTo('service-detail');
+    }
+
+    // بدء الموقع
+    document.getElementById('home').classList.remove('hidden');
+  </script>
+</body>
+</html>
